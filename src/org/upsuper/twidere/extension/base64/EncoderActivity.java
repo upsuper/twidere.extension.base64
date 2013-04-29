@@ -2,13 +2,11 @@ package org.upsuper.twidere.extension.base64;
 
 import org.mariotaku.twidere.Twidere;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.util.Base64;
 import android.view.Menu;
 import android.view.View;
-import android.view.WindowManager.LayoutParams;
-import android.widget.Button;
 import android.widget.EditText;
 
 public class EncoderActivity extends Activity {
@@ -20,7 +18,6 @@ public class EncoderActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_encoder);
 		mEditPlain = (EditText) findViewById(R.id.edit_plain);
-		getWindow().setSoftInputMode(LayoutParams.SOFT_INPUT_STATE_VISIBLE);
 	}
 
 	@Override

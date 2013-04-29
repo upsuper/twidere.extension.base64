@@ -23,7 +23,7 @@
         </activity>
         <activity
             android:name="org.upsuper.twidere.extension.base64.EncoderActivity"
-            android:label="@string/title_activity_encoder" >
+            android:label="@string/title_activity_encoder" android:windowSoftInputMode="stateVisible">
             <intent-filter>
                 <action android:name="org.mariotaku.twidere.EXTENSION_COMPOSE"/>
                 <category android:name="android.intent.category.DEFAULT"/>
