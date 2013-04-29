@@ -14,7 +14,6 @@ import android.text.Spanned;
 import android.text.style.URLSpan;
 import android.text.util.Linkify;
 import android.util.Base64;
-import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 
@@ -60,13 +59,6 @@ public class DecoderActivity extends Activity {
 			spannable.setSpan(b64Span, start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 		}
 		mTextContent.setText(spannable);
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.decoder, menu);
-		return true;
 	}
 
 	static class Base64Span extends URLSpan {

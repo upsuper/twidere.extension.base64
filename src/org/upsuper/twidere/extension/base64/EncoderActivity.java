@@ -5,7 +5,6 @@ import org.mariotaku.twidere.Twidere;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Base64;
-import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 
@@ -20,13 +19,6 @@ public class EncoderActivity extends Activity {
 		mEditPlain = (EditText) findViewById(R.id.edit_plain);
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.encoder, menu);
-		return true;
-	}
-	
 	public void appendText(View view) {
 		byte[] plainBytes = mEditPlain.getText().toString().getBytes();
 		String result = Base64.encodeToString(plainBytes, 0);
