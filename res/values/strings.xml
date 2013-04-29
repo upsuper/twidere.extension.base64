@@ -2,9 +2,8 @@
 <resources>
 
     <string name="app_name">Base64 Extension</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
     <string name="title_activity_encoder">Encode Base64</string>
+    <string name="title_activity_decoder">Decode Base64</string>
     <string name="append_base64">Append Base64</string>
 
 </resources>
