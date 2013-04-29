@@ -4,9 +4,11 @@ import java.util.regex.Pattern;
 
 import org.mariotaku.twidere.Twidere;
 import org.mariotaku.twidere.model.ParcelableStatus;
+import org.mariotaku.twidere.model.ParcelableUser;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.URLSpan;
@@ -33,8 +35,16 @@ public class DecoderActivity extends Activity {
 		mTextContent = (TextView) findViewById(R.id.text_content);
 		mTextPlain = (TextView) findViewById(R.id.text_plain);
 
-		ParcelableStatus status = Twidere.getStatusFromIntent(getIntent());
-		mTextContent.setText(status.text);
+		Intent intent = getIntent();
+		CharSequence text = "";
+		ParcelableStatus status = Twidere.getStatusFromIntent(intent);
+		ParcelableUser user = Twidere.getUserFromIntent(intent);
+		if (status != null)
+			text = status.text;
+		else if (user != null)
+			text = user.description;
+
+		mTextContent.setText(text);
 		Linkify.addLinks(mTextContent, PATTERN_BASE64, "");
 
 		SpannableString spannable = SpannableString.valueOf(mTextContent.getText());
